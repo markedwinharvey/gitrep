@@ -12,3 +12,5 @@ gitrep () {
 }
 
 Now typing the command `gitrep` runs the python script using the previously-saved credentials to create a new repo from within any target directory. 
+
+If invoking this script from a location not in the current directory, gitrep.py must be modified to include the absolute path to user_data.p (which occurs three times in the gitrep.py script). It is set up in the script only to open in the current directory. 
