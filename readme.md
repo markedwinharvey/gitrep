@@ -1,16 +1,20 @@
-gitrep.py is a python (2.7) script to simplify the creation of new repositories on github from the command line. 
+<h4>gitrep</h4>
 
-gitrep.py prompts to save user_name and token data into a file called user_data.p, which will be retrieved when gitrep.py is run again. 
-Saving the data is optional. 
+Simple github repository creator from command line
 
-To streamline repo creation and avoid unnecessary script copying, I invoke gitrep.py from a folder in my home directory, using a bash function `gitrep`.  
+After initial call, user data can be saved for future repo creation. 
 
-function in .bashrc (for gitrep.py in home directory):
+The easiest incantation will utilize bash; e.g., 
 
-gitrep () {
-	python $HOME/gitrep.py
-}
+in .bashrc:
 
-Now typing the command `gitrep` runs the python script using the previously-saved credentials to create a new repo from within any target directory. 
+	gitrep () {
+		python path_to_dir/gitrep.py
+	}
 
-If invoking this script from a location not in the current directory, gitrep.py must be modified to include the absolute path to user_data.p (which occurs three times in the gitrep.py script). It is set up in the script only to open in the current directory. 
+Usage then becomes:
+	
+	$ gitrep
+
+
+	
