@@ -1,10 +1,19 @@
 #!/usr/bin/env python
-import subprocess,os,pickle,sys
-def exit():	#exit
-	print 'exiting...';print
+'''
+Simple command-line repository creator for github
+'''
+import subprocess
+import os
+import pickle
+import sys
+
+def exit():
+	print 'exiting...'
+	print
 	sys.exit()
 
-def enter_data(): #enter new username and token, with option to save
+def enter_data(): 
+	#Enter new username and token, with option to save
 	user_name = raw_input('Enter new user_name: ')
 	token = raw_input('Enter token for this user_name: ')
 	save = ''
@@ -18,8 +27,11 @@ def enter_data(): #enter new username and token, with option to save
 	return user_name, token
 
 def main():
-	print; print '#### gitrep.py: github repo creation in python ####';print
-	if os.path.exists('user_data.p'):	#found saved data
+	print
+	print '#### gitrep.py: github repo creation in python ####'
+	print
+	
+	if os.path.exists('user_data.p'):						#found saved data
 		user_data = pickle.load(open('user_data.p','rb'))	#load data from file
 		user_name = user_data['user_name']
 		token = user_data['token']
